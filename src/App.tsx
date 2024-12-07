@@ -10,7 +10,15 @@ function App() {
         </a>
       </div>
       <h1 style={{ marginTop: 0, marginBottom: "18px" }}>React 19</h1>
-      <h2 style={{ color: "#E464C1", margin: 0 }}>Простий фронтенд</h2>
+      <h2 style={{ margin: 0 }}>
+        <a
+          href="https://www.youtube.com/@SimpleFrontendUA"
+          target="_blank"
+          style={{ color: "#E464C1" }}
+        >
+          Простий Фронтенд
+        </a>
+      </h2>
       <div className="card"></div>
     </>
   );
