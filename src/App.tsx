@@ -1,5 +1,6 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import RecipesOldWay from "./components/recipes-old-way";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
           Простий Фронтенд
         </a>
       </h2>
-      <div className="card"></div>
+      <div className="card">
+        <RecipesOldWay />
+      </div>
     </>
   );
 }
