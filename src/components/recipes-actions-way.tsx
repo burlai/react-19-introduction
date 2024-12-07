@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 
 type Recipe = {
   id: number;
@@ -6,28 +6,21 @@ type Recipe = {
   image: string;
 };
 
-const RecipesOldWay = () => {
+const RecipesActionsWay = () => {
   const [recipes, setRecipes] = useState<Recipe[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
-  const [isPending, setIsPending] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
-  const fetchRecipes = async () => {
-    setIsPending(true);
-
-    try {
+  const fetchRecipes = () => {
+    startTransition(async () => {
       const response = await fetch("https://dummyjson.com/recipes");
       if (!response.ok) {
-        throw new Error(`Error: ${response.status} ${response.statusText}`);
+        setError(new Error(`Error: ${response.status} ${response.statusText}`));
+        return;
       }
       const data = await response.json();
       setRecipes(data.recipes);
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err);
-      }
-    } finally {
-      setIsPending(false);
-    }
+    });
   };
 
   useEffect(() => {
@@ -58,4 +51,4 @@ const RecipesOldWay = () => {
   );
 };
 
-export default RecipesOldWay;
+export default RecipesActionsWay;

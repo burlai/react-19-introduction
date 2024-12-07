@@ -1,6 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import RecipesOldWay from "./components/recipes-old-way";
+// import RecipesOldWay from "./components/recipes-old-way";
+import RecipesActionsWay from "./components/recipes-actions-way";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         </a>
       </h2>
       <div className="card">
-        <RecipesOldWay />
+        {/* <RecipesOldWay /> */}
+        <RecipesActionsWay />
       </div>
     </>
   );
