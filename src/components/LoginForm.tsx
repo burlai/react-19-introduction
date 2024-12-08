@@ -28,8 +28,6 @@ function LoginForm() {
       console.log(result);
 
       setIsLoggedIn(true);
-
-      return null;
     },
     null // Initial state for error
   );
