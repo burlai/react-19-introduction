@@ -1,5 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import { ClientComponent } from "./components/ClientComponent";
+// import { ServerComponent } from "./components/ServerComponent";
 
 function App() {
   return (
@@ -19,7 +21,10 @@ function App() {
           Простий Фронтенд
         </a>
       </h2>
-      <div className="card"></div>
+      <div className="card">
+        <ClientComponent />
+        {/* <ServerComponent /> */}
+      </div>
     </>
   );
 }
