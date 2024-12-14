@@ -1,4 +1,6 @@
 import { useActionState, useState } from "react";
+import { SubmitButton } from "./SubmitButton";
+import { InputComponent } from "./InputComponent";
 
 // useActionState docs: https://react.dev/reference/react/useActionState
 
@@ -46,9 +48,11 @@ function LoginForm() {
         </label>
         <input id="password" type="password" name="password" required />
       </div>
-      <button className="button" type="submit" disabled={isPending}>
+      {/* <button className="button" type="submit" disabled={isPending}>
         {isPending ? "Logging in..." : "Login"}
-      </button>
+      </button> */}
+      <InputComponent />
+      <SubmitButton />
       {error && <p style={{ color: "red" }}>{error}</p>}
       {isLoggedIn && <p style={{ color: "green" }}>Logged in successfully!</p>}
     </form>
