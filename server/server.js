@@ -43,6 +43,8 @@ app.post("/api/messages", (req, res) => {
 
     messages.push(newMessage);
 
+    // res.status(400).json({ error: "Some bad error took place!" });  // simulate an error response
+
     res.status(201).json(newMessage);
   }, 2000);
 });
